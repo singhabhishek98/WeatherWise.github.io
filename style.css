@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    background-image: linear-gradient();
+    color: white;
+    /* Add text shadow */
+    text-shadow: 1px 1px 2px rgb(253, 64, 64), 0 0 25px rgb(229, 229, 237), 0 0 5px darkblue;
+}
+
+body {
+    background-image: url('4.webp'); /* Add your background image URL here */
+    background-size: 100% 100%; /* Set to cover the entire viewport */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.forecast {
+    font-size: 0.9em;
+}
+
+span {
+    font-size: 1em;
+}
+
+li:hover {
+    background-color: rgb(61, 162, 225);
+    text-decoration: underline;
+}

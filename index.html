@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WeatherWise</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <!-- Latest Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style for social media links */
+        .social a {
+            color: #fff;
+            font-size: 24px;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!--Jumbotron for Title-->
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#404040 ;color: white;">
+        <h1> <strong>WeatherWise</strong></h1>
+    </div>
+    <div class="container">
+        <!--Row for searching a city-->
+        <div class="row">
+            <div class="col-sm-4 bg-light">
+                <!--Here we create an HTML form for handling the inputs-->
+                <h4 class="pt-1"><strong style="color: black;">Search for a City:</strong></h4>
+                <!--Here we create the text box for capturing the search city Name-->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="search-city" aria-label="City Search" aria-describedby="search-button">
+                    <div class="input-group-append">
+                        <button class="btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <!--section for search city history-->
+                <button class="btn btn-primary" type="button" id="clear-history" style="color: gold;">Clear history</button>
+                <ul class="list-group">
+                    <!-- History items will be added here -->
+                </ul>
+            </div>   
+            <div class="col-sm-8">
+                <div class="row ml-2 border border-dark rounded">
+                    <div class="col-sm-12" id="current-weather">
+                        <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                        <p>Temperature:<span class="current" id="temperature"></span></p>
+                        <p>Humidity:<span class="current" id="humidity"></span></p> 
+                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                        <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+                    </div>
+                </div>
+                <!--Row for future data to be dumped here-->
+                <div class="col-sm-12" id="future-weather">
+                    <h3 style="color: bisque;">5-Day Forecast:</h3>
+                    <div class="row text-light">
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate0"></p>
+                            <p id="fImg0"></p>
+                            <p>Temp:<span id="fTemp0"></span></p>
+                            <p>Humidity:<span id="fHumidity0"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate1"></p>
+                            <p id="fImg1"></p>
+                            <p>Temp:<span id="fTemp1"></span></p>
+                            <p>Humidity:<span id="fHgdeumidity1"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <p id="fDate2"></p>
+                            <p id="fImg2"></p>
+                            <p>Temp:<span id="fTemp2"></span></p>
+                            <p>Humidity:<span id="fHumidity2"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <p id="fDate3"></p>
+                            <p id="fImg3"></p>
+                            <p>Temp:<span id="fTemp3"></span></p>
+                            <p>Humidity:<span id="fHumidity3"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate4"></p>
+                            <p id="fImg4"></p>
+                            <p>Temp:<span id="fTemp4"></span></p>
+                            <p>Humidity:<span id="fHumidity4"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- Copyright Section with Your Name -->
+    <footer class="text-center py-3">
+        <p>&copy; 2023 WeatherWise. All rights reserved. | Designed by Abhishek Singh & Gaur</p>
+        <!-- Social Media Links -->
+        <div class="social">
+            <a href="https://www.linkedin.com/in/itsabhishek98/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/singhabhishek98" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100011235600297" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_itsabhi98/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Code to JavaScript File -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Add an event listener for the "Enter" key press
+        document.getElementById("search-city").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                // Trigger a click event on the search button
+                document.getElementById("search-button").click();
+            }
+        });
+    </script>
+</body>
+</html>
